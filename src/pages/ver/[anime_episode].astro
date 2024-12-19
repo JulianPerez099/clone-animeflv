@@ -1,6 +1,4 @@
 ---
-export const prerender = false;
-
 import { getAnimeInfo } from "animeflv-api";
 import VideoPlayer from "../../components/VideoPlayer";
 import { getVideo } from "../../lib/getVideo";
@@ -30,6 +28,8 @@ try {
   console.error("Error cargando datos:", error);
   throw new Error("No se pudieron cargar los datos necesarios.");
 }
+
+export const prerender = false;
 ---
 
 <Layout title={`${anime?.title} - AnimeFLV`}>
