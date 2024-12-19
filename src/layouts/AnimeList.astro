@@ -1,0 +1,42 @@
+---
+import { getOnAir } from "animeflv-api";
+
+const { id, title, type } = Astro.props;
+
+if (!id) {
+  throw new Error("ID no proporcionado en los parámetros.");
+}
+
+const anime = await getOnAir();
+
+if (!anime) {
+  throw new Error(`Anime con ID ${id} no encontrado`);
+}
+
+function cleanTitle(title: string) {
+  return title.replace(/\b(Anime|OVA|Película)\b/gi, "").trim();
+}
+---
+
+<div class="flex items-center justify-between w-full">
+  <!-- Título del anime -->
+  <a href={`/anime/${id}`} class="flex items-center space-x-2 w-full">
+    <div class="w-3 h-3 bg-gray-300 rounded-full flex-shrink-0"></div>
+    <h2
+      id="title-anime"
+      class="text-sm font-medium text-gray-800 max-w-44 truncate"
+    >
+      {cleanTitle(title)}
+    </h2>
+  </a>
+  <!-- Etiqueta del tipo -->
+  <span
+    class={`text-sm font-semibold px-2 py-1 rounded-full ${
+      type === "Anime"
+        ? "bg-[#01bcf3] text-white border-[#01bcf3]"
+        : "bg-[#ff7e00] text-white border-[#ff7e00]"
+    }`}
+  >
+    {type.toUpperCase()}
+  </span>
+</div>

@@ -1,0 +1,34 @@
+---
+import Animes from "../components/Animes.astro";
+import AnimesEmision from "../components/AnimesEmision.astro";
+import Anuncio from "../components/Anuncio.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="AnimeFLV - Ver Anime Online HD">
+  <!-- Navbar -->
+  <Navbar />
+
+  <div
+    class="md:ml-20 md:mr-20 ml-4 mr-4 mt-8 items-center content-center flex flex-col gap-4"
+  >
+    <Anuncio />
+  </div>
+  <!-- Main Content -->
+  <div class="flex flex-col md:flex-row gap-4 md:ml-20 md:mr-20 ml-4 mr-4 mt-6">
+    <!-- ANIMES EN EMISIÓN -->
+    <div class="w-full md:w-1/4 hidden md:block">
+      <AnimesEmision />
+    </div>
+
+    <!-- ÚLTIMOS EPISODIOS -->
+    <div class="w-full md:w-3/4">
+      <Animes />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <Footer />
+</Layout>
