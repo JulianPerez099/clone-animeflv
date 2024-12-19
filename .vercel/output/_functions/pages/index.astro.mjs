@@ -60,6 +60,7 @@ const $$Anuncio = createComponent(($$result, $$props, $$slots) => {
 tu fuente de anime online gratis en HD</span> </h1> </div>`;
 }, "C:/Users/JulianPerez/Desktop/clone-animeflv/src/components/Anuncio.astro", void 0);
 
+const prerender = false;
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "AnimeFLV - Ver Anime Online HD" }, { "default": ($$result2) => renderTemplate`  ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<div class="md:ml-20 md:mr-20 ml-4 mr-4 mt-8 items-center content-center flex flex-col gap-4"> ${renderComponent($$result2, "Anuncio", $$Anuncio, {})} </div>  <div class="flex flex-col md:flex-row gap-4 md:ml-20 md:mr-20 ml-4 mr-4 mt-6"> <!-- ANIMES EN EMISIÓN --> <div class="w-full md:w-1/4 hidden md:block"> ${renderComponent($$result2, "AnimesEmision", $$AnimesEmision, {})} </div> <!-- ÚLTIMOS EPISODIOS --> <div class="w-full md:w-3/4"> ${renderComponent($$result2, "Animes", $$Animes, {})} </div> </div>  ${renderComponent($$result2, "Footer", $$Footer, {})} ` })}`;
 }, "C:/Users/JulianPerez/Desktop/clone-animeflv/src/pages/index.astro", void 0);
@@ -71,6 +72,7 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$Index,
   file: $$file,
+  prerender,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
