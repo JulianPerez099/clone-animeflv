@@ -16,7 +16,15 @@
 			"dest": "_render"
 		},
 		{
+			"src": "^\\/anime\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
 			"src": "^\\/ver\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
 			"dest": "_render"
 		}
 	]

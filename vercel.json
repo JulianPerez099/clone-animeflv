@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/get-video.js": {
-      "includeFiles": "node_modules/puppeteer/.local-chromium/**/*"
-    }
-  }
-}
